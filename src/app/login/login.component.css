@@ -1,0 +1,11 @@
+.container {
+  margin-top: 10px;
+}
+.card {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.row {
+  margin-top: 20px;
+}

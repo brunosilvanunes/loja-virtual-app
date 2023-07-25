@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="card text-center">
+    <strong>LOGIN</strong>
+    <br>
+    <label>Por favor entre com o seu Email e Senha.</label>
+    <div class="card-body">
+      <form [formGroup]="loginForm">
+        <div class="row">
+          <div class="col-md-12">
+            <span>E-mail:</span>
+            <input type="text" class="form-control" formControlName="email" />
+          </div>
+          <div class="col-md-12">
+            <span>Senha:</span>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="password"
+            />
+          </div>
+        </div>
+      </form>
+      <div class="row">
+        <div class="col-md-6">
+          <button
+            type="button"
+            class="form-control btn btn-success"
+            (click)="onSubmit()"
+          >
+            Entrar
+          </button>
+        </div>
+        <div class="col-md-6">
+          <button
+            type="button"
+            class="form-control btn btn-primary"
+            (click)="registrar()"
+          >
+            Registrar-se!
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
