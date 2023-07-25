@@ -29,7 +29,9 @@ export class LoginComponent implements OnInit {
         user.email = this.loginForm.get('email')?.value;
         user.password = this.loginForm.get('password')?.value;
 
-        this.service.login(user);
+        this.router.navigate(['/home'])
+
+        // this.service.login(user);
     }
 
     public registrar(): void {
