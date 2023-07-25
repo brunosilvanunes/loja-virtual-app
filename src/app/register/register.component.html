@@ -1,0 +1,36 @@
+<div class="container autenticacao-card-container">
+  <div class="row">
+    <div class="card autenticacao-card">
+      <form [formGroup]="registerForm">
+        <div class="row">
+          <div class="col-md-6 texto_lb">
+            <label>Nome Completo:</label>
+            <input type="text" class="form-control" formControlName="username"/>
+          </div>
+          <div class="col-md-6 texto_lb">
+            <label>CPF:</label>
+            <input type="text" class="form-control" formControlName="cpf">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 texto_lb">
+            <label>E-mail:</label>
+            <input type="text" class="form-control" formControlName="email" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 texto_lb">
+            <label>Senha:</label>
+            <input type="password" class="form-control" formControlName="password"/>
+          </div>
+        </div>
+      </form>
+      <div class="row">
+        <div class="col-md-12">
+          <button class="form-control btn btn-primary" (click)="onSubmit()">REGISTRAR!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
