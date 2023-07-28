@@ -29,12 +29,12 @@ export class LoginComponent implements OnInit {
         user.email = this.loginForm.get('email')?.value;
         user.password = this.loginForm.get('password')?.value;
 
-        this.router.navigate(['/home'])
+        this.service.login(user);
 
-        // this.service.login(user);
+        this.router.navigate(['/home']);
     }
 
-    public registrar(): void {
+    public register(): void {
         this.router.navigate(['/register']);
     }
 }

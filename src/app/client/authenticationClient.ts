@@ -5,25 +5,23 @@ import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
 
 @Injectable({
-    providedIn: 'root',
+  providedIn: 'root',
 })
 export class AuthenticationClient {
+  constructor(
+    private http: HttpClient
+  ) { }
 
+  login(user: User): Observable<string> {
+    return this.http.post<string>(environment.url + '/user/login', { user }, { responseType: 'json' })
+  }
 
-    constructor(
-        private http: HttpClient
-    ) { }
-
-    login(user: User): Observable<string> {
-        return this.http.post<string>(environment.url + '/user/login', { user }, { responseType: 'json' })
-    }
-
-    public register(user: User): Observable<string> {
-        return this.http.post<string>(
-            environment.url + '/user/register',
-            { user },
-            { responseType: 'json' }
-        );
-    }
+  public register(user: User): Observable<string> {
+    return this.http.post<string>(
+      environment.url + '/user/register',
+      { user },
+      { responseType: 'json' }
+    );
+  }
 
 }
