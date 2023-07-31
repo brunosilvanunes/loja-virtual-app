@@ -3,6 +3,7 @@ import { AuthenticationService } from '../services/authentication.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from '../model/user';
 import { Router } from '@angular/router';
+import { Authorization } from '../model/authorization';
 
 @Component({
     selector: 'app-login',
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
     styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+    public tokenKey = 'token';
     public loginForm!: FormGroup;
 
     constructor(
@@ -18,7 +20,7 @@ export class LoginComponent implements OnInit {
 
     ngOnInit(): void {
         this.loginForm = new FormGroup({
-            email: new FormControl('', [Validators.email, Validators.required]),
+            username: new FormControl('', Validators.required),
             password: new FormControl('', Validators.required)
         })
     }
@@ -26,7 +28,7 @@ export class LoginComponent implements OnInit {
     public onSubmit() {
         let user: User = new User();
 
-        user.email = this.loginForm.get('email')?.value;
+        user.username = this.loginForm.get('username')?.value;
         user.password = this.loginForm.get('password')?.value;
 
         this.service.login(user);
